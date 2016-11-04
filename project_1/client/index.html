@@ -9,34 +9,34 @@
 </head>
 <body class="container">
     
-    <h1 class="text-center">Negociações</h1>
+    <h1 class="text-center">Deals</h1>
     
     <form class="form">
         
         <div class="form-group">
-            <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>        
+            <label for="date">Date</label>
+            <input type="date" id="date" class="form-control" required autofocus/>        
         </div>    
         
         <div class="form-group">
-            <label for="quantidade">Quantidade</label>
-            <input type="number" min="1" step="1" id="quantidade" class="form-control" value="1" required/>
+            <label for="quantity">Quantity</label>
+            <input type="number" min="1" step="1" id="quantity" class="form-control" value="1" required/>
         </div>
         
         <div class="form-group">
-            <label for="valor">Valor</label>
-            <input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
+            <label for="value">Value</label>
+            <input id="value" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
         </div>
         
-        <button class="btn btn-primary" type="submit">Incluir</button>
+        <button class="btn btn-primary" type="submit">Insert</button>
     </form>
     
     <div class="text-center">
         <button class="btn btn-primary text-center" type="button">
-            Importar Negociações
+            Import Deals
         </button>
         <button class="btn btn-primary text-center" type="button">
-            Apagar
+            Delete
         </button>
     </div> 
     <br>
@@ -45,9 +45,9 @@
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>VALOR</th>
+                <th>DATE</th>
+                <th>QUANTITY</th>
+                <th>VALUE</th>
                 <th>VOLUME</th>
             </tr>
         </thead>
@@ -58,6 +58,6 @@
         <tfoot>
         </tfoot>
     </table>
-    
+    <script src="js/index.js"></script>
 </body>
 </html>
