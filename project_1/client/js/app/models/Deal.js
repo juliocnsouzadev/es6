@@ -1,25 +1,34 @@
 class Deal {
 
     constructor(date, quantity, value){
-        this.date = date;
-        this.quantity = quantity;
-        this.value = value;
+        
+        if (date instanceof Date)
+            this._date = new Date(date.getTime());
+        
+        if (typeof quantity == "number")
+            this._quantity = quantity;
+        
+        if (typeof value == "number")
+            this._value = value;
+        
+        Object.freeze(this);
     }
 
     get date(){
-        return this.date;
+        return new Date(this._date.getTime());
     }
 
     get quantity(){
-        return this.quantity;
+        return this._quantity;
     }
 
     get value(){
-        return this.value;
+        return this._value;
     }
 
     get volume(){
-        return  this.quantity * this.value;
+        let volume = this.quantity * this.value;
+        return isNaN(volume) ? 0 : volume;
     }
 
 
