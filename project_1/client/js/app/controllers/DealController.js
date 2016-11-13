@@ -10,12 +10,17 @@ class DealController {
         this._dealsView = new DealsView($('#dealsView'));
 
         this._dealsView.update(this._dealList);
+        this._message = new Message();
+        this._messageView = new MessageView($('#messageView'));
+        this._messageView.update(this._message);
     }
     
     add(event) {
         event.preventDefault();
         this._dealList.add(this._buildDeal());
         this._dealsView.update(this._dealList);
+        this._message.text = "Deal added with sucess!";
+        this._messageView.update(this._message);
         this._clearForm();
     }
 

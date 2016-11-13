@@ -1,15 +1,10 @@
-class DealsView {
+class DealsView extends View {
 
     constructor(element){
-        this._element = element;
+        super(element);
     }
 
-
-    update(dealList){
-        this._element.innerHTML = this._template(dealList);
-    }
-
-    _template(dealList){
+    template(dealList){
         return `
         <table class="table table-hover table-bordered">
             <thead>
