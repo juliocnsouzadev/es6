@@ -11,7 +11,7 @@
     
     <h1 class="text-center">Deals</h1>
     
-    <form class="form">
+    <form class="form" onsubmit="dealCtrl.add(event)">
         
         <div class="form-group">
             <label for="date">Date</label>
@@ -59,11 +59,11 @@
         </tfoot>
     </table>
     <script src="js/app/models/Deal.js"></script>
+     <script src="js/app/models/DealList.js"></script>
+    <script src="js/app/controllers/DealController.js"></script>
+    <script src="js/app/helpers/DateHelper.js"></script>
     <script>
-
-        let d2 = new Deal(new Date(), parseInt("10"), 2.2);
-        console.log(d2);
-        console.log(d2.volume);
+        dealCtrl = new DealController();
     </script>
 </body>
 </html>
