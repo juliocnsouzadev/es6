@@ -7,21 +7,24 @@ class DealController {
         this._inputQuantity = $('#quantity');
         this._inputValue = $('#value');
         this._dealList = new DealList();
+        this._dealsView = new DealsView($('#dealsView'));
+
+        this._dealsView.update(this._dealList);
     }
     
     add(event) {
         event.preventDefault();
         this._dealList.add(this._buildDeal());
+        this._dealsView.update(this._dealList);
         this._clearForm();
-        console.log(this._dealList.deals);
     }
 
     _buildDeal(){
         let date = DateHelper.txtToDate(this._inputDate.value);
         return new Deal(
             date,
-            this._inputQuantity.value,
-            this._inputValue.value 
+            parseInt(this._inputQuantity.value),
+            parseFloat(this._inputValue.value) 
             ); 
     }
 
